@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CxGLearner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.ico" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180x180.ico" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header Controls -->
+        <div class="header-controls">
+            <button id="theme-toggle" class="control-btn">
+                <i class="fas fa-moon"></i> <span class="theme-text" data-en="Dark Mode" data-zh="深色模式">Dark Mode</span>
+            </button>
+            <button id="lang-toggle" class="control-btn">
+                <i class="fas fa-globe"></i> <span class="lang-text" data-en="中文" data-zh="English">中文</span>
+            </button>
+        </div>
+
+        <!-- Banner Section -->
+        <div class="banner">
+            <h1>CxGLearner: An Unsupervised Framework for Construction Grammar Induction</h1>
+            <p class="description" data-en="An innovative approach to grammar induction using unsupervised learning techniques"
+               data-zh="一种利用无监督学习技术进行语法归纳的创新方法">
+                An innovative approach to grammar induction using unsupervised learning techniques
+            </p>
+
+            <div class="authors">
+                <div class="author-list">
+                    <div class="author" data-en="Lvxiaowei Xu" data-zh="徐吕啸威">Lvxiaowei Xu</div>
+                    <div class="author" data-en="Zhilin Gong" data-zh="龚之琳">Zhilin Gong</div>
+                    <div class="author" data-en="Anpeng Wu" data-zh="吴安鹏">Anpeng Wu</div>
+                    <div class="author" data-en="Yaowen Xu" data-zh="徐耀文">Yaowen Xu</div>
+                    <div class="author" data-en="Tianxiang Wang" data-zh="王天祥">Tianxiang Wang</div>
+                    <div class="author" data-en="Yayu Cao" data-zh="曹雅钰">Yayu Cao</div>
+                    <div class="author corresponding" data-en="Ming Cai" data-zh="蔡铭">Ming Cai</div>
+                </div>
+                <div class="institution" data-en="Zhejiang University" data-zh="浙江大学">
+                    Zhejiang University
+                </div>
+            </div>
+        </div>
+
+        <!-- Resource Buttons -->
+        <div class="button-grid">
+            <a href="https://aclanthology.org/2024.acl-long.542/" class="resource-btn" target="_blank">
+                <i class="fas fa-file-alt"></i>
+                <span>ACL Anthology</span>
+            </a>
+            <a href="https://github.com/CxGrammar/CxGLearner" class="resource-btn" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>GitHub Repository</span>
+            </a>
+            <a href="https://github.com/xlxwalex/CxGCentor" class="resource-btn" target="_blank">
+                <i class="fas fa-database"></i>
+                <span>Data Repository</span>
+            </a>
+            <a href="https://cxg.unillm.top/" class="resource-btn" target="_blank">
+                <i class="fas fa-project-diagram"></i>
+                <span class="constructicon" data-en="Constructicon Visualization" data-zh="构式可视化">Constructicon Visualization</span>
+            </a>
+        </div>
+
+        <!-- Data Display Section -->
+        <div class="data-section">
+            <h2 class="section-title" data-en="Data Resources" data-zh="数据资源">Data Resources</h2>
+            <div class="json-viewer" id="json-viewer">
+                <!-- JSON data will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                <p>&copy; 2024 CxGLearner Project. Zhejiang University MMF. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://status.unillm.top/" target="_blank">
+                    <i class="fas fa-server"></i> <span class="service-status" data-en="Service Status" data-zh="服务状态">Service Status</span>
+                </a>
+                <span class="separator">|</span>
+                <a href="https://beian.miit.gov.cn/" target="_blank">
+                    <span>浙ICP备16022527号-2</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

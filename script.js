@@ -19,7 +19,7 @@ const resources = {
             "Ming Cai": "Ming Cai"
         },
         institution: "Zhejiang University",
-        constructicon: "Constructicon Visualization",
+        constructicon: "Constructicon",
         datarepository: "Data Repository",
         coderepository: "Github Repository",
         anthology: "ACL Anthology"

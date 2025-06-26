@@ -317,11 +317,11 @@ body.dark-mode .news-content code {
 
 .section-title {
     font-size: 1.8rem;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
     color: var(--primary-color);
     text-align: center;
     padding-bottom: 10px;
-    border-bottom: 3px solid var(--primary-color);
+    /*border-bottom: 3px solid var(--primary-color);*/
     display: inline-block;
 }
 

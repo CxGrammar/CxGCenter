@@ -149,8 +149,8 @@ function loadNewsData() {
 }
 
 function renderNews() {
-    let html = '';
     loadNewsData().then(newsData => {
+        let html = '';
         // 将日期排序（最新在前）
         const sortedDates = Object.keys(newsData).sort().reverse();
 

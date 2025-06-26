@@ -150,7 +150,7 @@ function loadNewsData() {
 
 function renderNews() {
     let html = '';
-    loadNewsData().then(jsonData => {
+    loadNewsData().then(newsData => {
         // 将日期排序（最新在前）
         const sortedDates = Object.keys(newsData).sort().reverse();
 

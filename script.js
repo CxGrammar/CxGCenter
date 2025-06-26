@@ -18,7 +18,10 @@ const resources = {
             "Ming Cai": "Ming Cai"
         },
         institution: "Zhejiang University",
-        constructicon: "Constructicon Visualization"
+        constructicon: "Constructicon Visualization",
+        datarepository: "Data Repository",
+        coderepository: "Github Repository",
+        anthology: "ACL Anthology"
     },
     zh: {
         themeText: "深色模式",
@@ -38,7 +41,10 @@ const resources = {
             "Ming Cai": "蔡铭"
         },
         institution: "浙江大学",
-        constructicon: "构式可视化"
+        constructicon: "构式网络",
+        datarepository: "数据仓库",
+        coderepository: "代码仓库",
+        anthology: "论文"
     }
 };
 
@@ -93,9 +99,18 @@ function updateTextContent() {
     // 更新机构信息
     document.querySelector('.institution').textContent = langRes.institution;
 
-    // 更新构式可视化按钮
+    // 更新可视化按钮
     if (document.querySelector('.constructicon')) {
         document.querySelector('.constructicon').textContent = langRes.constructicon;
+    }
+    if (document.querySelector('.datarepository')) {
+        document.querySelector('.datarepository').textContent = langRes.datarepository;
+    }
+    if (document.querySelector('.coderepository')) {
+        document.querySelector('.coderepository').textContent = langRes.coderepository;
+    }
+    if (document.querySelector('.anthology')) {
+        document.querySelector('.anthology').textContent = langRes.anthology;
     }
 
     // 重新渲染JSON数据

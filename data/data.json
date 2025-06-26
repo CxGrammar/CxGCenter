@@ -1,19 +1,7 @@
 {
     "en": {
-        "defaults": "1.0.0",
-        "1.0.0": "https://github.com/xlxwalex/CxGCentor/releases/download/v1.0.0/en_data.zip",
-        "1.1.0": "https://github.com/xlxwalex/CxGCentor/releases/download/v1.1.0/en_data_v1.1.zip",
-        "latest": "https://github.com/xlxwalex/CxGCentor/releases/latest/download/en_data.zip"
-    },
-    "zh": {
-        "defaults": "1.0.2",
-        "1.0.0": "https://github.com/xlxwalex/CxGCentor/releases/download/v1.0.0/zh_data.zip",
-        "1.0.2": "https://github.com/xlxwalex/CxGCentor/releases/download/v1.0.2/zh_data_v1.0.2.zip",
-        "latest": "https://github.com/xlxwalex/CxGCentor/releases/latest/download/zh_data.zip"
-    },
-    "de": {
-        "defaults": "0.9.0",
-        "0.9.0": "https://github.com/xlxwalex/CxGCentor/releases/download/v0.9.0/de_data.zip",
-        "latest": "https://github.com/xlxwalex/CxGCentor/releases/latest/download/de_data.zip"
+        "defaults": "https://expic.xlxw.org/cxglearner/en/1.0.zip",
+        "1.0": "https://expic.xlxw.org/cxglearner/en/1.0.zip",
+        "latest": "https://expic.xlxw.org/cxglearner/en/1.0.zip"
     }
 }

@@ -71,7 +71,7 @@ themeToggle.addEventListener('click', () => {
 langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'en' ? 'zh' : 'en';
     updateTextContent();
-    renderNews(); 
+    renderNews();
 });
 
 // 更新文本内容
@@ -124,43 +124,56 @@ function updateTextContent() {
     renderJsonData();
 }
 
-// 模拟news.json数据
-const newsData = {
-    "2025-06-30": {
-        "en": "**New paper accepted!** Our follow-up work on construction grammar has been accepted to ACL 2025.",
-        "zh": "**新论文被接收！** 我们关于多语言构式语法的后续工作已被ACL 2025接收。"
-    },
-    "2025-06-26": {
-        "en": "**CxGLearner v2.0 released!** The new version includes:\n\n- Support for 10 additional languages\n- Improved unsupervised learning algorithms\n- Enhanced visualization capabilities\n\n[Download now](https://github.com/CxGrammar/CxGLearner/releases/tag/v2.0)",
-        "zh": "**CxGLearner v2.0发布！** 新版本包含：\n\n- 支持10种额外语言\n- 改进的无监督学习算法\n- 增强的可视化功能\n\n[立即下载](https://github.com/CxGrammar/CxGLearner/releases/tag/v2.0)"
-    }
-};
+function loadNewsData() {
+    return fetch('data/news.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error('Error loading JSON data:', error);
+            // 返回模拟数据作为后备
+            return {
+                "2025-06-30": {
+                    "en": "**New paper accepted!** Our follow-up work on construction grammar has been accepted to ACL 2025.",
+                    "zh": "**新论文被接收！** 我们关于多语言构式语法的后续工作已被ACL 2025接收。"
+                },
+                "2025-06-26": {
+                    "en": "**CxGLearner v2.0 released!** The new version includes:\n\n- Support for 10 additional languages\n- Improved unsupervised learning algorithms\n- Enhanced visualization capabilities\n\n[Download now](https://github.com/CxGrammar/CxGLearner/releases/tag/v2.0)",
+                    "zh": "**CxGLearner v2.0发布！** 新版本包含：\n\n- 支持10种额外语言\n- 改进的无监督学习算法\n- 增强的可视化功能\n\n[立即下载](https://github.com/CxGrammar/CxGLearner/releases/tag/v2.0)"
+                }
+        };
+    });
+}
 
 function renderNews() {
     let html = '';
+    loadNewsData().then(jsonData => {
+        // 将日期排序（最新在前）
+        const sortedDates = Object.keys(newsData).sort().reverse();
 
-    // 将日期排序（最新在前）
-    const sortedDates = Object.keys(newsData).sort().reverse();
+        sortedDates.forEach(date => {
+            const newsItem = newsData[date];
+            const content = newsItem[currentLang] || newsItem['en'];
 
-    sortedDates.forEach(date => {
-        const newsItem = newsData[date];
-        const content = newsItem[currentLang] || newsItem['en'];
+            html += `
+                <div class="news-item">
+                    <div class="news-date">${date}</div>
+                    <div class="news-content">${marked.parse(content)}</div>
+                </div>
+            `;
+        });
 
-        html += `
-            <div class="news-item">
-                <div class="news-date">${date}</div>
-                <div class="news-content">${marked.parse(content)}</div>
-            </div>
-        `;
+        if (html === '') {
+            html = `<div class="news-item">
+                <div class="news-content">${currentLang === 'en' ? 'No news available' : '暂无新闻'}</div>
+            </div>`;
+        }
+
+        newsContainer.innerHTML = html;
     });
-
-    if (html === '') {
-        html = `<div class="news-item">
-            <div class="news-content">${currentLang === 'en' ? 'No news available' : '暂无新闻'}</div>
-        </div>`;
-    }
-
-    newsContainer.innerHTML = html;
 }
 
 // 从外部加载JSON数据

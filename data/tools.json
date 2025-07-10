@@ -1,0 +1,103 @@
+{
+  "tools": [
+    {
+      "name": "CxGLearner  V1",
+      "description-en": "An advanced parser for construction grammar analysis. Supports multiple languages and provides detailed syntactic and semantic annotations.",
+      "description-zh": "CxGLearner PyPI Package - V1",
+      "url": "https://pypi.org/project/cxglearner/",
+      "icon": "fas fa-code"
+    },
+    {
+      "name": "Construction Visualizer",
+      "description-en": "Interactive visualization tool for exploring construction networks and relationships between grammatical patterns.",
+      "description-zh": "用于探索构式网络和语法模式之间关系的交互式可视化工具。",
+      "url": "https://cxg.unillm.top/",
+      "icon": "fas fa-project-diagram"
+    },
+    {
+      "name": "Grammar Induction Toolkit",
+      "description-en": "Comprehensive toolkit for unsupervised grammar induction from large text corpora.",
+      "description-zh": "从大型文本语料库中进行无监督语法归纳的综合工具包。",
+      "url": "https://github.com/CxGrammar/GrammarInductionToolkit",
+      "icon": "fas fa-cogs"
+    },
+    {
+      "name": "Pattern Extractor",
+      "description-en": "Extracts grammatical patterns and constructions from raw text using unsupervised methods.",
+      "description-zh": "使用无监督方法从原始文本中提取语法模式和构式。",
+      "url": "https://github.com/CxGrammar/PatternExtractor",
+      "icon": "fas fa-search"
+    }
+  ],
+  "data": {
+    "ASE 1.0": [
+      {
+        "name": "ASE-GPT Medium",
+        "description-en": "Medium-sized language model trained on ASE corpus with 350M parameters.",
+        "description-zh": "在ASE语料库上训练的中等规模语言模型，参数为3.5亿。",
+        "url": "https://huggingface.co/CxGrammar/ase-gpt-medium",
+        "icon": "fas fa-brain"
+      },
+      {
+        "name": "ASE-BERT Base",
+        "description-en": "BERT model pre-trained on ASE corpus with construction grammar annotations.",
+        "description-zh": "在ASE语料库上预训练的BERT模型，包含构式语法注释。",
+        "url": "https://huggingface.co/CxGrammar/ase-bert-base",
+        "icon": "fas fa-robot"
+      },
+      {
+        "name": "Construction Annotations",
+        "description-en": "Dataset of 1.2M sentences annotated with construction grammar patterns.",
+        "description-zh": "包含120万句子的数据集，带有构式语法模式注释。",
+        "url": "https://github.com/CxGrammar/ASE-Annotations",
+        "icon": "fas fa-tags"
+      },
+      {
+        "name": "ASE-GPT Large",
+        "description-en": "Large language model trained on ASE corpus with 1.2B parameters.",
+        "description-zh": "在ASE语料库上训练的大型语言模型，参数为12亿。",
+        "url": "https://huggingface.co/CxGrammar/ase-gpt-large",
+        "icon": "fas fa-microchip"
+      }
+    ],
+    "MultiLang CxG 2.1": [
+      {
+        "name": "English Constructions",
+        "description-en": "Comprehensive inventory of English constructions with usage examples.",
+        "description-zh": "包含用法示例的英语构式综合库。",
+        "url": "https://github.com/CxGrammar/English-Constructions",
+        "icon": "fas fa-language"
+      },
+      {
+        "name": "Chinese Constructions",
+        "description-en": "Collection of Chinese grammatical constructions with semantic annotations.",
+        "description-zh": "带有语义注释的中文语法构式集合。",
+        "url": "https://github.com/CxGrammar/Chinese-Constructions",
+        "icon": "fas fa-language"
+      },
+      {
+        "name": "German Constructions",
+        "description-en": "German grammatical patterns with frequency and distribution data.",
+        "description-zh": "包含频率和分布数据的德语语法模式。",
+        "url": "https://github.com/CxGrammar/German-Constructions",
+        "icon": "fas fa-language"
+      }
+    ],
+    "CxG-Bench": [
+      {
+        "name": "Evaluation Suite",
+        "description-en": "Benchmark for evaluating construction grammar models across multiple tasks.",
+        "description-zh": "用于评估构式语法模型在多个任务上表现的基准。",
+        "url": "https://github.com/CxGrammar/CxG-Bench",
+        "icon": "fas fa-chart-line"
+      },
+      {
+        "name": "Model Comparisons",
+        "description-en": "Performance comparisons of various models on CxG-Bench tasks.",
+        "description-zh": "各种模型在CxG-Bench任务上的性能比较。",
+        "url": "https://cxg.unillm.top/benchmark",
+        "icon": "fas fa-trophy"
+      }
+    ]
+  }
+}

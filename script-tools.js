@@ -1,6 +1,9 @@
 const resources = {
     en: {
-        themeText: "Dark Mode",
+        themeText: {
+            dark: "Light Mode",
+            light: "Dark Mode"
+        },
         langText: "中文",
         backText: "Back to Home",
         description: "An innovative approach to grammar induction using unsupervised learning techniques",
@@ -11,7 +14,10 @@ const resources = {
         noData: "No data available"
     },
     zh: {
-        themeText: "深色模式",
+        themeText: {
+            dark: "浅色模式",
+            light: "深色模式"
+        },
         langText: "English",
         backText: "返回首页",
         description: "基于无监督的语法归纳创新框架",
@@ -24,7 +30,9 @@ const resources = {
 };
 
 // 当前语言状态
-let currentLang = 'en';
+let currentLang = localStorage.getItem('language') || 'en';
+// 当前主题状态
+let isDarkMode = localStorage.getItem('theme') === 'dark';
 
 // DOM Elements
 const themeToggle = document.getElementById('theme-toggle');
@@ -34,16 +42,42 @@ const dataContainer = document.getElementById('data-container');
 const themeText = document.querySelector('.theme-text');
 const langText = document.querySelector('.lang-text');
 const backText = document.querySelector('.back-text');
+const themeIcon = themeToggle.querySelector('i');
+
+// 初始化主题和语言
+function initializePage() {
+    // 设置主题
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+    
+    // 设置语言
+    updateTextContent();
+    
+    // 初始渲染
+    renderToolsData();
+}
 
 // 主题切换
 themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+    isDarkMode = !document.body.classList.toggle('dark-mode');
+    
+    // 更新图标
+    themeIcon.classList.toggle('fa-moon', !isDarkMode);
+    themeIcon.classList.toggle('fa-sun', isDarkMode);
+    
+    // 保存主题状态
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     updateTextContent();
 });
 
 // 语言切换
 langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'en' ? 'zh' : 'en';
+    // 保存语言状态
+    localStorage.setItem('language', currentLang);
     updateTextContent();
     renderToolsData();
 });
@@ -51,9 +85,10 @@ langToggle.addEventListener('click', () => {
 // 更新文本内容
 function updateTextContent() {
     const langRes = resources[currentLang];
+    const themeMode = isDarkMode ? 'dark' : 'light';
 
     // 更新按钮文本
-    themeText.textContent = langRes.themeText;
+    themeText.textContent = langRes.themeText[themeMode];
     langText.textContent = langRes.langText;
     backText.textContent = langRes.backText;
 
@@ -271,9 +306,4 @@ function createCard(item) {
 }
 
 // 初始化
-document.addEventListener('DOMContentLoaded', () => {
-    // 初始渲染
-    renderToolsData();
-    // 初始文本更新
-    updateTextContent();
-});
+document.addEventListener('DOMContentLoaded', initializePage);

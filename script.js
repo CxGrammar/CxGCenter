@@ -1,7 +1,10 @@
 // 语言资源对象
 const resources = {
     en: {
-        themeText: "Dark Mode",
+        themeText: {
+            dark: "Light Mode",
+            light: "Dark Mode"
+        },
         langText: "中文",
         description: "An innovative approach to grammar induction using unsupervised learning techniques",
         dataResources: "Construction Inventory",
@@ -20,12 +23,15 @@ const resources = {
         },
         institution: "Zhejiang University",
         constructicon: "Constructicon",
-        datarepository: "Data & Tools", // 修改这里
+        datarepository: "Data & Tools",
         coderepository: "Github Repository",
         anthology: "ACL Anthology"
     },
     zh: {
-        themeText: "深色模式",
+        themeText: {
+            dark: "浅色模式",
+            light: "深色模式"
+        },
         langText: "English",
         description: "基于无监督的语法归纳创新框架",
         dataResources: "构式库资源",
@@ -44,14 +50,16 @@ const resources = {
         },
         institution: "浙江大学",
         constructicon: "构式网络",
-        datarepository: "数据与工具", // 修改这里
+        datarepository: "数据与工具",
         coderepository: "代码仓库",
         anthology: "论文"
     }
 };
 
 // 当前语言状态
-let currentLang = 'en';
+let currentLang = localStorage.getItem('language') || 'en';
+// 当前主题状态
+let isDarkMode = localStorage.getItem('theme') === 'dark';
 
 // DOM Elements
 const themeToggle = document.getElementById('theme-toggle');
@@ -60,16 +68,43 @@ const newsContainer = document.getElementById('news-container');
 const jsonViewer = document.getElementById('json-viewer');
 const themeText = document.querySelector('.theme-text');
 const langText = document.querySelector('.lang-text');
+const themeIcon = themeToggle.querySelector('i');
+
+// 初始化主题和语言
+function initializePage() {
+    // 设置主题
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+    
+    // 设置语言
+    updateTextContent();
+    
+    // 初始渲染
+    renderNews();
+    renderJsonData();
+}
 
 // 主题切换
 themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+    isDarkMode = !document.body.classList.toggle('dark-mode');
+    
+    // 更新图标
+    themeIcon.classList.toggle('fa-moon', !isDarkMode);
+    themeIcon.classList.toggle('fa-sun', isDarkMode);
+    
+    // 保存主题状态
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     updateTextContent();
 });
 
 // 语言切换
 langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'en' ? 'zh' : 'en';
+    // 保存语言状态
+    localStorage.setItem('language', currentLang);
     updateTextContent();
     renderNews();
 });
@@ -77,9 +112,10 @@ langToggle.addEventListener('click', () => {
 // 更新文本内容
 function updateTextContent() {
     const langRes = resources[currentLang];
+    const themeMode = isDarkMode ? 'dark' : 'light';
 
     // 更新按钮文本
-    themeText.textContent = langRes.themeText;
+    themeText.textContent = langRes.themeText[themeMode];
     langText.textContent = langRes.langText;
 
     // 更新描述
@@ -144,8 +180,8 @@ function loadNewsData() {
                     "en": "**CxGLearner v2.0 released!** The new version includes:\n\n- Support for 10 additional languages\n- Improved unsupervised learning algorithms\n- Enhanced visualization capabilities\n\n[Download now](https://github.com/CxGrammar/CxGLearner/releases/tag/v2.0)",
                     "zh": "**CxGLearner v2.0发布！** 新版本包含：\n\n- 支持10种额外语言\n- 改进的无监督学习算法\n- 增强的可视化功能\n\n[立即下载](https://github.com/CxGrammar/CxGLearner/releases/tag/v2.0)"
                 }
-        };
-    });
+            };
+        });
 }
 
 function renderNews() {
@@ -247,8 +283,4 @@ function renderJsonData() {
 }
 
 // 初始化
-document.addEventListener('DOMContentLoaded', () => {
-    // 初始渲染
-    renderNews();
-    renderJsonData();
-});
+document.addEventListener('DOMContentLoaded', initializePage);

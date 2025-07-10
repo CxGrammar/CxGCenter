@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CxGLearner</title>
+    <title>CxGLearner - Data & Tools</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.ico" />
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180x180.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.ico" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-180x180.ico" />
 </head>
 <body>
     <div class="container">
         <!-- Header Controls -->
         <div class="header-controls">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> <span class="back-text" data-en="Back to Home" data-zh="返回首页">Back to Home</span>
+            </a>
             <div class="controls-right">
                 <button id="theme-toggle" class="control-btn">
                     <i class="fas fa-moon"></i> <span class="theme-text" data-en="Dark Mode" data-zh="深色模式">Dark Mode</span>
@@ -39,42 +42,19 @@
             </div>
         </div>
 
-        <!-- Resource Buttons -->
-        <div class="button-grid">
-            <a href="https://aclanthology.org/2024.acl-long.542/" class="resource-btn" target="_blank">
-                <i class="fas fa-file-alt"></i>
-                <span class="anthology" data-en="ACL Anthology" data-zh="论文">ACL Anthology</span>
-            </a>
-            <a href="https://github.com/CxGrammar/CxGLearner" class="resource-btn" target="_blank">
-                <i class="fab fa-github"></i>
-                <span class="coderepository" data-en="Github Repository" data-zh="代码仓库">GitHub Repository</span>
-            </a>
-            <a href="tools.html" class="resource-btn">
-                <i class="fas fa-toolbox"></i>
-                <span class="datarepository" data-en="Data & Tools" data-zh="数据与工具">Data & Tools</span>
-            </a>
-            <a href="https://cxg.unillm.top/" class="resource-btn" target="_blank">
-                <i class="fas fa-project-diagram"></i>
-                <span class="constructicon" data-en="Constructicon" data-zh="构式网络">Constructicon</span>
-            </a>
-        </div>
-
-        <!-- News Section -->
-        <div class="news-section">
-            <div class="news-title">
-                <h2 class="news-heading" data-en="Latest News" data-zh="最新动态">Latest News</h2>
-<!--                <i class="fas fa-newspaper"></i>-->
-            </div>
-            <div class="news-container" id="news-container">
-                <!-- News will be loaded here -->
+        <!-- Tools Section -->
+        <div class="section">
+            <h2 class="section-title" data-en="Tools" data-zh="工具">Tools</h2>
+            <div class="tools-grid" id="tools-container">
+                <!-- Tools will be loaded here -->
             </div>
         </div>
 
-        <!-- Data Display Section -->
-        <div class="data-section">
-            <h2 class="section-title" data-en="Construction Inventory" data-zh="构式库资源">Construction Inventory</h2>
-            <div class="json-viewer" id="json-viewer">
-                <!-- JSON data will be dynamically loaded here -->
+        <!-- Data Section -->
+        <div class="section">
+            <h2 class="section-title" data-en="Data Collections" data-zh="数据集">Data Collections</h2>
+            <div id="data-container">
+                <!-- Data collections will be loaded here -->
             </div>
         </div>
     </div>
@@ -96,7 +76,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script-tools.js"></script>
 </body>
 </html>

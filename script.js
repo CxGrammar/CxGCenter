@@ -20,7 +20,7 @@ const resources = {
         },
         institution: "Zhejiang University",
         constructicon: "Constructicon",
-        datarepository: "Data Repository",
+        datarepository: "Data & Tools", // 修改这里
         coderepository: "Github Repository",
         anthology: "ACL Anthology"
     },
@@ -44,7 +44,7 @@ const resources = {
         },
         institution: "浙江大学",
         constructicon: "构式网络",
-        datarepository: "数据仓库",
+        datarepository: "数据与工具", // 修改这里
         coderepository: "代码仓库",
         anthology: "论文"
     }

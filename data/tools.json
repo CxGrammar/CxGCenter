@@ -1,7 +1,7 @@
 {
   "tools": [
     {
-      "name": "CxGLearner V1.3.2",
+      "name": "CxGLearner",
       "description-en": "CxGLearner PyPI Package V1",
       "description-zh": "CxGLearner PyPI包 (V1)",
       "url": "https://pypi.org/project/cxglearner/",

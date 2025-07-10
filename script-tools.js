@@ -8,7 +8,7 @@ const resources = {
         backText: "Back to Home",
         description: "An innovative approach to grammar induction using unsupervised learning techniques",
         tools: "Tools",
-        dataCollections: "Data Collections",
+        dataCollections: "Data & Model Collections",
         serviceStatus: "Service Status",
         viewResource: "View resource",
         noData: "No data available"
@@ -22,7 +22,7 @@ const resources = {
         backText: "返回首页",
         description: "基于无监督的语法归纳创新框架",
         tools: "工具",
-        dataCollections: "数据集",
+        dataCollections: "数据&模型合集",
         serviceStatus: "服务状态",
         viewResource: "查看资源",
         noData: "暂无数据"

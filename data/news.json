@@ -1,7 +1,7 @@
 {
     "2025-05-16": {
-        "en": "**New paper accepted!** Our follow-up work \"CxGGEC: Construction-Guided Grammatical Error Correction\" on construction grammar for GEC has been accepted to ACL 2025. \n\n[Paper Link (To Be Released Shortly)](https://learner.xlxw.org/)",
-        "zh": "**新论文被接收！** 我们关于构式语法与语法纠错的后续工作\"CxGGEC: Construction-Guided Grammatical Error Correction\"已被ACL 2025接收。\n\n[论文链接（等待发布）](https://learner.xlxw.org/)"
+        "en": "**New paper accepted!** Our follow-up work \"CxGGEC: Construction-Guided Grammatical Error Correction\" on construction grammar for GEC has been accepted to ACL 2025. \n\n[Paper Link](https://aclanthology.org/2025.acl-long.307/)",
+        "zh": "**新论文被接收！** 我们关于构式语法与语法纠错的后续工作\"CxGGEC: Construction-Guided Grammatical Error Correction\"已被ACL 2025接收。\n\n[论文链接](https://aclanthology.org/2025.acl-long.307/)"
     },
     "2024-05-16": {
         "en": "Our work \"CoELM: Construction-Enhanced Language Modeling\" on CxGlearner framework and language models has been accepted to ACL 2024. \n\n[Paper Link](https://aclanthology.org/2024.acl-long.542/)",

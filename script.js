@@ -177,8 +177,8 @@ function loadNewsData() {
                     "zh": "**新论文被接收！** 我们关于多语言构式语法的后续工作已被ACL 2025接收。"
                 },
                 "2025-06-26": {
-                    "en": "**CxGLearner v2.0 released!** The new version includes:\n\n- Support for 10 additional languages\n- Improved unsupervised learning algorithms\n- Enhanced visualization capabilities\n\n[Download now](https://github.com/CxGrammar/CxGLearner/releases/tag/v2.0)",
-                    "zh": "**CxGLearner v2.0发布！** 新版本包含：\n\n- 支持10种额外语言\n- 改进的无监督学习算法\n- 增强的可视化功能\n\n[立即下载](https://github.com/CxGrammar/CxGLearner/releases/tag/v2.0)"
+                    "en": "**CxGLearner v2.0 released!** The new version includes:\n\n- Support for 10 additional languages\n- Improved unsupervised learning algorithms\n- Enhanced visualization capabilities\n\n[Download now](https://github.com/CxGrammar/)",
+                    "zh": "**CxGLearner v2.0发布！** 新版本包含：\n\n- 支持10种额外语言\n- 改进的无监督学习算法\n- 增强的可视化功能\n\n[立即下载](https://github.com/CxGrammar/)"
                 }
             };
         });
